@@ -1,0 +1,69 @@
+<!-- VERS
+26 июнь 2024 версия 0.1
+Пример слайдера Owl Carousel  https://owlcarousel2.github.io/OwlCarousel2/demos/basic.html 
+Шатохин ДС
+
+Выводит картинки из рабочего каталога
+Для навигации используются кнопки Previous и Next, а так же сдвиг мышкой
+
+Автомасштабирование
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owl Carousel Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</head>
+<body>
+<!-- Начало блока слайдера-->
+
+  <div class="owl-carousel owl-theme">
+    <div class="item"><img src="image1.jpg" alt="Image 1"></div>
+    <div class="item"><img src="image2.jpg" alt="Image 2"></div>
+    <div class="item"><img src="image3.jpg" alt="Image 3"></div>
+    <div class="item"><img src="image4.jpg" alt="Image 4"></div>
+	<div class="item"><img src="image5.jpg" alt="Image 5"></div>
+  </div>
+
+<!-- Начало блока навигации-->
+ <div class="custom-nav">
+    <div class="owl-prev">Previous</div>
+    <div class="owl-next">Next</div>
+  </div>
+
+<!-- Начало скрипт запуска слайдера -->
+  <script>
+    $(document).ready(function(){
+      var owl = $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1
+          },
+          600: {
+            items: 3
+          },
+          1000: {
+            items: 5
+          }
+        }
+      });
+      $(".custom-nav .owl-prev").click(function(){
+        owl.trigger('prev.owl.carousel');
+      });
+      $(".custom-nav .owl-next").click(function(){
+        owl.trigger('next.owl.carousel');
+      });
+    });
+  </script>
+</body>
+</html>

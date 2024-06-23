@@ -60,3 +60,32 @@ body {
     padding: 10px; 
     background-color: rgba(0, 0, 0, 0.5); 
 }
+
+.owl-carousel .item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .custom-nav {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+    }
+    .custom-nav .owl-prev,
+    .custom-nav .owl-next {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 20px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .custom-nav .owl-prev:hover,
+    .custom-nav .owl-next:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
